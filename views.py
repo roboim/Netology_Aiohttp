@@ -1,5 +1,6 @@
 from aiohttp import web
 from models import Session, Advertisement
+from schema import validate, CreateAdvertisement
 from services import get_advertisement_by_id, add_advertisement
 
 
@@ -23,6 +24,7 @@ class AdvView(web.View):
 
     async def post(self):
         json_data = await self.request.json()
+        json_data = validate(CreateAdvertisement, json_data)
         advertisement = Advertisement(**json_data)
         await add_advertisement(self.session, advertisement)
         return web.json_response({'id': advertisement.id})
