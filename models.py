@@ -37,7 +37,7 @@ class Advertisement(Base):
             'title': self.title,
             'description': self.description,
             'user': self.user,
-            'creation_date': int(self.creation_date.timestamp()),
+            'creation_date': self.creation_date.isoformat(),
         }
 
 
