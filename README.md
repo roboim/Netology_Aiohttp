@@ -1,3 +1,15 @@
+#### Решение
+Необходимые файлы находятся в репозитории(server_adv.py, client.py, urls.py, docker-compose.yml и др.).
+
+Маршруты указаны в файле urls.py
+##### Запуск проекта
+```sh
+docker-compose up -d --build
+python server_adv.py
+python client.py
+
+```
+
 # Домашнее задание к лекции «Aiohttp»
 
 Инструкцию по сдаче домашнего задания вы найдете на главной странице репозитория.
